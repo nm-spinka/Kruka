@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kahal Even Yisroel Krakow - קהל אבן ישראל קראקא</title>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --shul-blue: #002a52; /* Deep Blue from flyer */
+            --shul-gold: #a88552; /* Gold/Bronze from flyer */
+            --bg-cream: #fdfaf5; /* Cream background */
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Assistant', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f0eb;
+            color: var(--shul-blue);
+        }
+
+        /* --- Logo & Letterhead --- */
+        .header-wrapper {
+            background-color: var(--bg-cream);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--shul-gold);
+        }
+
+        .logo-container {
+            display: inline-block;
+            border: 2px solid var(--shul-gold);
+            padding: 20px 40px;
+            border-radius: 50% 50% 0 0; /* Creates an arch look */
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 10%;
+            width: 80%;
+            border-bottom: 1px solid var(--shul-gold);
+        }
+
+        .shul-name-yiddish {
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 38px;
+            font-weight: bold;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        .shul-name-english {
+            font-size: 18px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            color: var(--shul-gold);
+        }
+
+        .address-bar {
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background-color: var(--shul-blue);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover { color: var(--shul-gold); }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 30px;
+            border-top: 5px solid var(--shul-gold);
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Frank Ruhl Libre', serif;
+            font-size: 32px;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        /* --- Zmanim Table --- */
+        .zmanim-table {
+            width: 100%;
+            border-collapse: collapse;
+            direction: rtl;
+        }
+
+        .zmanim-table td {
+            padding: 15px;
+            border-bottom: 1px dashed #ddd;
+            font-size: 20px;
+        }
+
+        .zmanim-label { font-weight: bold; text-align: right; }
+        .zmanim-time { text-align: left; font-family: sans-serif; font-weight: bold; }
+
+        /* --- Payments Section --- */
+        .payment-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .btn-cc {
+            background-color: var(--shul-blue);
+            color: var(--white);
+            border: 2px solid var(--shul-blue);
+        }
+
+        .btn-cc:hover { background-color: #003a75; }
+
+        .btn-outline {
+            background-color: var(--white);
+            color: var(--shul-blue);
+            border: 2px solid var(--shul-blue);
+        }
+
+        .btn-outline:hover { background-color: #f9f9f9; }
+
+        .payment-icons {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 24px;
+            color: #888;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header-wrapper">
+    <div class="logo-container">
+        <h1 class="shul-name-yiddish">קהל אבן ישראל קראקא</h1>
+        <div class="shul-name-english">Kahal Even Yisroel Krakow</div>
+    </div>
+    <div class="address-bar">
+        4 STOCKBRIDGE AVE, SUFFERN, NY 10901
+    </div>
+</div>
+
+<nav>
+    <a href="#zmanim">ZMANIM</a>
+    <a href="#about">ABOUT</a>
+    <a href="#donate">DONATE</a>
+    <a href="#contact">CONTACT</a>
+</nav>
+
+<div class="container">
+    
+    <div id="zmanim" class="card">
+        <h2>סדר זמני תפלה</h2>
+        <table class="zmanim-table">
+            <tr><td class="zmanim-label">זמן הדלקת הנרות</td><td class="zmanim-time">7:28</td></tr>
+            <tr><td class="zmanim-label">מנחה וקבלת שבת</td><td class="zmanim-time">7:43</td></tr>
+            <tr><td class="zmanim-label">שחרית</td><td class="zmanim-time">10:15</td></tr>
+            <tr><td class="zmanim-label">מנחה ושל"ס</td><td class="zmanim-time">8:00</td></tr>
+            <tr><td class="zmanim-label">זמן מוצש"ק</td><td class="zmanim-time">9:00</td></tr>
+        </table>
+    </div>
+
+    <div id="donate" class="card">
+        <h2>נתינות / Payments</h2>
+        <p style="text-align: center;">Support our Kehilla and its activities.</p>
+        
+        <div class="payment-grid">
+            <a href="YOUR_CREDIT_CARD_LINK_HERE" class="btn btn-cc">
+                PAY BY CREDIT CARD (קרעדיט קארד)
+            </a>
+            
+            <a href="YOUR_ACH_LINK_HERE" class="btn btn-outline">ACH / Bank Transfer</a>
+            <a href="YOUR_ZELLE_OR_PAYPAL_LINK_HERE" class="btn btn-outline">Zelle / PayPal</a>
+        </div>
+        
+        <div class="payment-icons">
+            Visa &bull; Mastercard &bull; Amex
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2026 Cong. Even Yisroel Kraka - Suffern, N.Y.
+</footer>
+
+</body>
+</html>

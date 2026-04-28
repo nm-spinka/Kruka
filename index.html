@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Assistant:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --shul-blue: #002a52; /* Deep Blue from flyer */
-            --shul-gold: #a88552; /* Gold/Bronze from flyer */
-            --bg-cream: #fdfaf5; /* Cream background */
+            --shul-blue: #002a52; 
+            --shul-gold: #a88552; 
+            --bg-cream: #fdfaf5; 
             --white: #ffffff;
         }
 
@@ -33,7 +33,7 @@
             display: inline-block;
             border: 2px solid var(--shul-gold);
             padding: 20px 40px;
-            border-radius: 50% 50% 0 0; /* Creates an arch look */
+            border-radius: 50% 50% 0 0; 
             margin-bottom: 15px;
             position: relative;
         }
@@ -86,10 +86,7 @@
             margin: 0 15px;
             font-weight: bold;
             font-size: 15px;
-            transition: 0.3s;
         }
-
-        nav a:hover { color: var(--shul-gold); }
 
         /* --- Layout --- */
         .container {
@@ -116,38 +113,25 @@
             padding-bottom: 15px;
         }
 
-        /* --- Zmanim Table --- */
-        .zmanim-table {
-            width: 100%;
-            border-collapse: collapse;
-            direction: rtl;
-        }
-
-        .zmanim-table td {
-            padding: 15px;
-            border-bottom: 1px dashed #ddd;
-            font-size: 20px;
-        }
-
-        .zmanim-label { font-weight: bold; text-align: right; }
-        .zmanim-time { text-align: left; font-family: sans-serif; font-weight: bold; }
-
         /* --- Payments Section --- */
         .payment-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 12px;
             margin-top: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
             display: block;
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 17px;
             transition: 0.3s;
         }
 
@@ -155,6 +139,8 @@
             background-color: var(--shul-blue);
             color: var(--white);
             border: 2px solid var(--shul-blue);
+            font-size: 20px;
+            margin-bottom: 10px;
         }
 
         .btn-cc:hover { background-color: #003a75; }
@@ -162,16 +148,30 @@
         .btn-outline {
             background-color: var(--white);
             color: var(--shul-blue);
-            border: 2px solid var(--shul-blue);
+            border: 1px solid #ccc;
         }
 
-        .btn-outline:hover { background-color: #f9f9f9; }
+        .btn-outline:hover { 
+            border-color: var(--shul-blue);
+            background-color: #fcfaf6;
+        }
+
+        .zelle-box {
+            background-color: #f4f0f9;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 10px;
+            border: 1px dashed #6b1fb1;
+            color: #6b1fb1;
+            font-weight: bold;
+        }
 
         .payment-icons {
             text-align: center;
-            margin-top: 15px;
-            font-size: 24px;
-            color: #888;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #999;
         }
 
         footer {
@@ -203,32 +203,27 @@
 
 <div class="container">
     
-    <div id="zmanim" class="card">
-        <h2>סדר זמני תפלה</h2>
-        <table class="zmanim-table">
-            <tr><td class="zmanim-label">זמן הדלקת הנרות</td><td class="zmanim-time">7:28</td></tr>
-            <tr><td class="zmanim-label">מנחה וקבלת שבת</td><td class="zmanim-time">7:43</td></tr>
-            <tr><td class="zmanim-label">שחרית</td><td class="zmanim-time">10:15</td></tr>
-            <tr><td class="zmanim-label">מנחה ושל"ס</td><td class="zmanim-time">8:00</td></tr>
-            <tr><td class="zmanim-label">זמן מוצש"ק</td><td class="zmanim-time">9:00</td></tr>
-        </table>
-    </div>
-
     <div id="donate" class="card">
-        <h2>נתינות / Payments</h2>
-        <p style="text-align: center;">Support our Kehilla and its activities.</p>
+        <h2>נתינות / Online Donations</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Support the holy work of our Kehilla through our secure payment partners.</p>
         
         <div class="payment-grid">
-            <a href="YOUR_CREDIT_CARD_LINK_HERE" class="btn btn-cc">
+            <a href="https://secure.cardknox.com/congregationevenyisroelkruka" class="btn btn-cc" target="_blank">
                 PAY BY CREDIT CARD (קרעדיט קארד)
             </a>
             
-            <a href="YOUR_ACH_LINK_HERE" class="btn btn-outline">ACH / Bank Transfer</a>
-            <a href="YOUR_ZELLE_OR_PAYPAL_LINK_HERE" class="btn btn-outline">Zelle / PayPal</a>
+            <a href="https://org.pledgercharitable.org/ChargeCard?ein=394349201&camp=" class="btn btn-outline" target="_blank">Pledger</a>
+            <a href="https://thedonorsfund.org/donate/congregation-even-yisroel-kruka/394349201" class="btn btn-outline" target="_blank">Donors Fund</a>
+            <a href="https://secure.ojccardpaymentsite.org/MQAAADUAAAAwAAAAMAAAADcAAAA=?name=&amount=" class="btn btn-outline" target="_blank">OJC (Oversight Committee)</a>
+            <a href="https://matbia.org/d/00124241680" class="btn btn-outline" target="_blank">Matbia</a>
+
+            <div class="zelle-box">
+                Zelle: Khalevenyisroel@gmail.com
+            </div>
         </div>
         
         <div class="payment-icons">
-            Visa &bull; Mastercard &bull; Amex
+            Visa • Mastercard • Amex • Discover • ACH
         </div>
     </div>
 

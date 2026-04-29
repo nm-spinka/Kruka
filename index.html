@@ -23,7 +23,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 30px auto;
             background: var(--white);
             border: 12px double var(--gold);
@@ -42,14 +42,6 @@
             height: auto;
             display: block;
             margin: 0 auto 10px;
-        }
-
-        .rabbi-line {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--dark-brown);
-            margin-bottom: 10px;
-            display: block;
         }
 
         /* Navigation Bar */
@@ -77,33 +69,21 @@
             color: var(--dark-brown);
             font-weight: bold;
             font-size: 20px;
-            font-family: "Times New Roman", serif;
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--gold);
-        }
+        .nav-links a:hover { color: var(--gold); }
 
         .nav-donate-btn {
             background-color: var(--gold);
             color: var(--white) !important;
             padding: 8px 25px;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .nav-donate-btn:hover {
-            background-color: var(--dark-brown);
-        }
+        .content-body { padding: 0 40px 40px; }
 
-        .content-body {
-            padding: 0 40px 40px;
-        }
-
-        .zmanim-title { font-size: 40px; text-align: center; margin: 10px 0; }
-        .sub-title { text-align: center; font-size: 24px; margin-bottom: 25px; color: var(--gold); }
-
+        /* Zmanim Table */
         .zmanim-table {
             width: 100%;
             border-collapse: collapse;
@@ -119,6 +99,7 @@
         .header-row { background-color: var(--dark-brown); color: var(--gold); }
         .row-label { background-color: #fdfaf5; font-weight: bold; font-size: 22px; }
 
+        /* Payment Grid */
         .payment-section {
             margin-top: 30px;
             padding: 25px;
@@ -150,14 +131,68 @@
             border: 1px solid var(--gold);
         }
 
+        /* SIDE BY SIDE Contact Section */
         .contact-section {
             margin-top: 40px;
-            padding: 25px;
+            padding: 40px 0;
             border-top: 3px double var(--gold);
-            direction: ltr;
+            direction: ltr; /* Keeping English alignment for side-by-side */
+        }
+
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .contact-info-column {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .map-column {
+            flex: 1;
+            min-width: 300px;
+            height: 350px;
+            border: 2px solid var(--gold);
+        }
+
+        .contact-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+            color: var(--dark-brown);
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 19px;
+        }
+
+        .contact-item i {
+            color: var(--gold);
+            width: 40px;
+            font-size: 22px;
+            text-align: center;
+            margin-right: 15px;
+        }
+
+        .contact-item a {
+            color: var(--dark-brown);
+            text-decoration: none;
         }
 
         footer { text-align: center; padding: 20px; font-size: 14px; color: #888; background: #f9f9f9; }
+
+        @media (max-width: 768px) {
+            .contact-flex { flex-direction: column; }
+            .map-column { width: 100%; height: 300px; }
+        }
     </style>
 </head>
 <body>
@@ -165,7 +200,7 @@
 <div class="container">
     <header id="home">
         <img src="logo.jpg" alt="Cong. Even Visroel Kruka" class="letterhead-img">
-        <div class="rabbi-line">בראשות הרב שליט"א</div>
+        <div style="font-size: 24px; font-weight: bold; text-align: center; margin-bottom: 10px;">בראשות הרב שליט"א</div>
     </header>
 
     <nav class="site-nav">
@@ -179,9 +214,8 @@
 
     <div class="content-body">
         <div id="zmanim">
-            <div class="zmanim-title">זמני התפלות</div>
-            <div class="sub-title">בבית מדרשינו</div>
-
+            <h1 style="text-align:center; font-size: 40px; margin: 10px 0;">זמני התפלות</h1>
+            <p style="text-align:center; font-size: 24px; color: var(--gold); margin-bottom: 25px;">בבית מדרשינו</p>
             <table class="zmanim-table">
                 <thead>
                     <tr class="header-row">
@@ -191,27 +225,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="row-label">מנחה ערב שב"ק</td>
-                        <td>10 מינוט אחר הדקה"נ</td>
-                        <td>בזמן הדקה"נ</td>
-                    </tr>
-                    <tr>
-                        <td class="row-label">שחרית</td>
-                        <td>9:15</td>
-                        <td>10:00</td>
-                    </tr>
-                    <tr>
-                        <td class="row-label">מנחה ושל"ס</td>
-                        <td>בזמן הדקה"נ</td>
-                        <td>בזמן הדקה"נ</td>
-                    </tr>
+                    <tr><td class="row-label">מנחה ערב שב"ק</td><td>10 מינוט אחר הדקה"נ</td><td>בזמן הדקה"נ</td></tr>
+                    <tr><td class="row-label">שחרית</td><td>9:15</td><td>10:00</td></tr>
+                    <tr><td class="row-label">מנחה ושל"ס</td><td>בזמן הדקה"נ</td><td>בזמן הדקה"נ</td></tr>
                 </tbody>
             </table>
         </div>
 
         <div class="payment-section" id="donate">
-            <h3 style="text-align:center;">נדרים ונדבות</h3>
+            <h3 style="text-align:center; font-size: 24px;">נדרים ונדבות</h3>
             <a href="https://secure.cardknox.com/congregationevenyisroelkruka" target="_blank" class="main-btn">Pay with Credit Card</a>
             <div class="grid-links">
                 <a href="https://org.pledgercharitable.org/ChargeCard?ein=394349201&camp=" target="_blank" class="link-box">Pledger</a>
@@ -223,22 +245,40 @@
         </div>
 
         <div class="contact-section" id="contact">
-            <div style="text-align:center; font-size: 28px; margin-bottom: 20px;">Contact Information</div>
-            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
-                <i class="fa-solid fa-location-dot" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
-                <span><b>Address:</b> 4 Stockbridge Ave, Suffern, NY 10901</span>
-            </div>
-            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
-                <i class="fa-solid fa-envelope" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
-                <span><b>Email:</b> <a href="mailto:Khalevenyisroel@gmail.com" style="color: var(--dark-brown); text-decoration: none;">Khalevenyisroel@gmail.com</a></span>
-            </div>
-            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
-                <i class="fa-solid fa-phone" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
-                <span><b>Yuda Berkowitz:</b> <a href="tel:8452937999" style="color: var(--dark-brown); text-decoration: none;">845.293.7999</a></span>
-            </div>
-            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
-                <i class="fa-solid fa-phone-flip" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
-                <span><b>Rabbi Sholom Kahana:</b> <a href="tel:8455216767" style="color: var(--dark-brown); text-decoration: none;">845.521.6767</a></span>
+            <div class="contact-flex">
+                
+                <div class="contact-info-column">
+                    <div class="contact-title">Contact Information</div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span><b>Address:</b><br>4 Stockbridge Ave, Suffern, NY 10901</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><b>Email:</b><br><a href="mailto:Khalevenyisroel@gmail.com">Khalevenyisroel@gmail.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <span><b>Yuda Berkowitz:</b><br><a href="tel:8452937999">845.293.7999</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone-flip"></i>
+                        <span><b>Rabbi Sholom Kahana:</b><br><a href="tel:8455216767">845.521.6767</a></span>
+                    </div>
+                </div>
+
+                <div class="map-column">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.352495764047!2d-74.1353272!3d41.1214041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2e9e6f9d3b7ef%3A0x6e9f6b9f3b9f3b9f!2s4%20Stockbridge%20Ave%2C%20Suffern%2C%20NY%2010901!5e0!3m2!1sen!2sus!4v1715000000000!5m2!1sen!2sus" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
             </div>
         </div>
     </div>

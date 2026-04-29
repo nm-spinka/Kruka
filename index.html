@@ -1,237 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="yi" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kahal Even Yisroel Krakow - קהל אבן ישראל קראקא</title>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+    <title>קהל אבן ישראל קראקא</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --shul-blue: #002a52; 
-            --shul-gold: #a88552; 
-            --bg-cream: #fdfaf5; 
+            --gold: #C5A059;
+            --dark-brown: #4A3728;
+            --bg-cream: #F9F5EF;
             --white: #ffffff;
         }
 
         body {
-            font-family: 'Assistant', sans-serif;
+            font-family: "Times New Roman", Times, serif;
+            background-color: var(--bg-cream);
+            color: var(--dark-brown);
             margin: 0;
             padding: 0;
-            background-color: #f2f0eb;
-            color: var(--shul-blue);
+            scroll-behavior: smooth;
         }
 
-        /* --- Logo & Letterhead --- */
-        .header-wrapper {
-            background-color: var(--bg-cream);
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--shul-gold);
-        }
-
-        .logo-container {
-            display: inline-block;
-            border: 2px solid var(--shul-gold);
-            padding: 20px 40px;
-            border-radius: 50% 50% 0 0; 
-            margin-bottom: 15px;
-            position: relative;
-        }
-
-        .logo-container::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 10%;
-            width: 80%;
-            border-bottom: 1px solid var(--shul-gold);
-        }
-
-        .shul-name-yiddish {
-            font-family: 'Frank Ruhl Libre', serif;
-            font-size: 38px;
-            font-weight: bold;
-            margin: 0;
-            line-height: 1.1;
-        }
-
-        .shul-name-english {
-            font-size: 18px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-top: 10px;
-            color: var(--shul-gold);
-        }
-
-        .address-bar {
-            font-size: 14px;
-            margin-top: 15px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        /* --- Navigation --- */
-        nav {
-            background-color: var(--shul-blue);
-            padding: 15px;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        /* --- Layout --- */
         .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .card {
+            max-width: 900px;
+            margin: 30px auto;
             background: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            padding: 40px;
-            margin-bottom: 30px;
-            border-top: 5px solid var(--shul-gold);
+            border: 12px double var(--gold);
+            padding: 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            overflow: hidden;
         }
 
-        h2 {
+        header {
             text-align: center;
-            font-family: 'Frank Ruhl Libre', serif;
-            font-size: 32px;
-            margin-top: 0;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 15px;
+            padding: 40px 20px 10px;
         }
 
-        /* --- Payments Section --- */
-        .payment-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 12px;
-            margin-top: 25px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
+        .letterhead-img {
+            max-width: 100%;
+            height: auto;
             display: block;
-            text-align: center;
-            padding: 18px;
-            border-radius: 6px;
-            text-decoration: none;
+            margin: 0 auto 10px;
+        }
+
+        .rabbi-line {
+            font-size: 24px;
             font-weight: bold;
-            font-size: 17px;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Navigation Bar */
+        .site-nav {
+            background-color: var(--white);
+            border-top: 1px solid var(--gold);
+            border-bottom: 1px solid var(--gold);
+            padding: 12px 0;
+            margin-bottom: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            direction: ltr;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-weight: bold;
+            font-size: 20px;
+            font-family: "Times New Roman", serif;
             transition: 0.3s;
         }
 
-        .btn-cc {
-            background-color: var(--shul-blue);
-            color: var(--white);
-            border: 2px solid var(--shul-blue);
-            font-size: 20px;
-            margin-bottom: 10px;
+        .nav-links a:hover {
+            color: var(--gold);
         }
 
-        .btn-cc:hover { background-color: #003a75; }
-
-        .btn-outline {
-            background-color: var(--white);
-            color: var(--shul-blue);
-            border: 1px solid #ccc;
+        .nav-donate-btn {
+            background-color: var(--gold);
+            color: var(--white) !important;
+            padding: 8px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .btn-outline:hover { 
-            border-color: var(--shul-blue);
-            background-color: #fcfaf6;
+        .nav-donate-btn:hover {
+            background-color: var(--dark-brown);
         }
 
-        .zelle-box {
-            background-color: #f4f0f9;
+        .content-body {
+            padding: 0 40px 40px;
+        }
+
+        .zmanim-title { font-size: 40px; text-align: center; margin: 10px 0; }
+        .sub-title { text-align: center; font-size: 24px; margin-bottom: 25px; color: var(--gold); }
+
+        .zmanim-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .zmanim-table th, .zmanim-table td {
+            border: 1px solid var(--gold);
             padding: 15px;
-            border-radius: 6px;
             text-align: center;
-            margin-top: 10px;
-            border: 1px dashed #6b1fb1;
-            color: #6b1fb1;
+        }
+
+        .header-row { background-color: var(--dark-brown); color: var(--gold); }
+        .row-label { background-color: #fdfaf5; font-weight: bold; font-size: 22px; }
+
+        .payment-section {
+            margin-top: 30px;
+            padding: 25px;
+            background: #fdfaf5;
+            border: 1px solid var(--gold);
+        }
+
+        .main-btn {
+            display: block;
+            background: var(--dark-brown);
+            color: var(--gold);
+            text-align: center;
+            padding: 18px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 22px;
+            border: 2px solid var(--gold);
+            margin-bottom: 15px;
         }
 
-        .payment-icons {
+        .grid-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .link-box {
+            background: #f1ede4;
+            color: var(--dark-brown);
             text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #999;
+            padding: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid var(--gold);
         }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 14px;
-            color: #777;
+        .contact-section {
+            margin-top: 40px;
+            padding: 25px;
+            border-top: 3px double var(--gold);
+            direction: ltr;
         }
+
+        footer { text-align: center; padding: 20px; font-size: 14px; color: #888; background: #f9f9f9; }
     </style>
 </head>
 <body>
 
-<div class="header-wrapper">
-    <div class="logo-container">
-        <h1 class="shul-name-yiddish">קהל אבן ישראל קראקא</h1>
-        <div class="shul-name-english">Kahal Even Yisroel Krakow</div>
-    </div>
-    <div class="address-bar">
-        4 STOCKBRIDGE AVE, SUFFERN, NY 10901
-    </div>
-</div>
-
-<nav>
-    <a href="#zmanim">ZMANIM</a>
-    <a href="#about">ABOUT</a>
-    <a href="#donate">DONATE</a>
-    <a href="#contact">CONTACT</a>
-</nav>
-
 <div class="container">
-    
-    <div id="donate" class="card">
-        <h2>נתינות / Online Donations</h2>
-        <p style="text-align: center; margin-bottom: 30px;">Support the holy work of our Kehilla through our secure payment partners.</p>
-        
-        <div class="payment-grid">
-            <a href="https://secure.cardknox.com/congregationevenyisroelkruka" class="btn btn-cc" target="_blank">
-                PAY BY CREDIT CARD (קרעדיט קארד)
-            </a>
-            
-            <a href="https://org.pledgercharitable.org/ChargeCard?ein=394349201&camp=" class="btn btn-outline" target="_blank">Pledger</a>
-            <a href="https://thedonorsfund.org/donate/congregation-even-yisroel-kruka/394349201" class="btn btn-outline" target="_blank">Donors Fund</a>
-            <a href="https://secure.ojccardpaymentsite.org/MQAAADUAAAAwAAAAMAAAADcAAAA=?name=&amount=" class="btn btn-outline" target="_blank">OJC</a>
-            <a href="https://matbia.org/d/00124241680" class="btn btn-outline" target="_blank">Matbia</a>
+    <header id="home">
+        <img src="logo.jpg" alt="Cong. Even Visroel Kruka" class="letterhead-img">
+        <div class="rabbi-line">בראשות הרב שליט"א</div>
+    </header>
 
-            <div class="zelle-box">
-                Zelle: Khalevenyisroel@gmail.com
+    <nav class="site-nav">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#zmanim">Zmanim</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#donate" class="nav-donate-btn">Donate</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-body">
+        <div id="zmanim">
+            <div class="zmanim-title">זמני התפלות</div>
+            <div class="sub-title">בבית מדרשינו</div>
+
+            <table class="zmanim-table">
+                <thead>
+                    <tr class="header-row">
+                        <th>תפלה</th>
+                        <th>בשעון החורף</th>
+                        <th>בשעון הקיץ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="row-label">מנחה ערב שב"ק</td>
+                        <td>10 מינוט אחר הדקה"נ</td>
+                        <td>בזמן הדקה"נ</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">שחרית</td>
+                        <td>9:15</td>
+                        <td>10:00</td>
+                    </tr>
+                    <tr>
+                        <td class="row-label">מנחה ושל"ס</td>
+                        <td>בזמן הדקה"נ</td>
+                        <td>בזמן הדקה"נ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="payment-section" id="donate">
+            <h3 style="text-align:center;">נדרים ונדבות</h3>
+            <a href="https://secure.cardknox.com/congregationevenyisroelkruka" target="_blank" class="main-btn">Pay with Credit Card</a>
+            <div class="grid-links">
+                <a href="https://org.pledgercharitable.org/ChargeCard?ein=394349201&camp=" target="_blank" class="link-box">Pledger</a>
+                <a href="https://matbia.org/d/00124241680" target="_blank" class="link-box">Matbia</a>
+                <a href="https://thedonorsfund.org/donate/congregation-even-yisroel-kruka/394349201" target="_blank" class="link-box">Donors Fund</a>
+                <a href="mailto:Khalevenyisroel@gmail.com" class="link-box">Zelle</a>
+                <a href="https://secure.ojccardpaymentsite.org/MQAAADUAAAAwAAAAMAAAADcAAAA=?name=&amount=" target="_blank" class="link-box" style="grid-column: span 2;">OJC Card</a>
             </div>
         </div>
-        
-        <div class="payment-icons">
-            Visa • Mastercard • Amex • Discover • ACH
+
+        <div class="contact-section" id="contact">
+            <div style="text-align:center; font-size: 28px; margin-bottom: 20px;">Contact Information</div>
+            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
+                <i class="fa-solid fa-location-dot" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
+                <span><b>Address:</b> 4 Stockbridge Ave, Suffern, NY 10901</span>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
+                <i class="fa-solid fa-envelope" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
+                <span><b>Email:</b> <a href="mailto:Khalevenyisroel@gmail.com" style="color: var(--dark-brown); text-decoration: none;">Khalevenyisroel@gmail.com</a></span>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
+                <i class="fa-solid fa-phone" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
+                <span><b>Yuda Berkowitz:</b> <a href="tel:8452937999" style="color: var(--dark-brown); text-decoration: none;">845.293.7999</a></span>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 15px; font-size: 20px;">
+                <i class="fa-solid fa-phone-flip" style="color: var(--gold); width: 40px; text-align: center; margin-right: 15px;"></i>
+                <span><b>Rabbi Sholom Kahana:</b> <a href="tel:8455216767" style="color: var(--dark-brown); text-decoration: none;">845.521.6767</a></span>
+            </div>
         </div>
     </div>
 
+    <footer>
+        <p>© 2026 Cong. Even Visroel Kruka - Suffern, NY</p>
+    </footer>
 </div>
-
-<footer>
-    &copy; 2026 Cong. Even Yisroel Kraka - Suffern, N.Y.
-</footer>
 
 </body>
 </html>
